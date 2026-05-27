@@ -258,7 +258,7 @@ This project helped me improve my understanding of:
 * UI Design
 
 GitHub Repository:
-[PASTE YOUR GITHUB LINK HERE]
+https://github.com/Koushiki2114/EmployeeManagementSystem
 
 Live Demo:
 [PASTE YOUR WEBSITE LINK HERE]
