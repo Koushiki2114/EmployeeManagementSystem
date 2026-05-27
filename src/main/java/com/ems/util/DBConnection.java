@@ -14,12 +14,16 @@ public class DBConnection {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/ems",
-                    "root",
-                    "Koushiki"
+
+                "jdbc:mysql://kodama.proxy.rlwy.net:55964/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
+
+                "root",
+
+                "YOUR_DATABASE_PASSWORD"
             );
 
         } catch (Exception e) {
+
             e.printStackTrace();
         }
 
