@@ -19,7 +19,7 @@ public class DBConnection {
 
                 "root",
 
-                "YOUR_DATABASE_PASSWORD"
+                "fhjiJURXiGNmtwZvoDieKOnQJYUnPvgN"
             );
 
         } catch (Exception e) {
