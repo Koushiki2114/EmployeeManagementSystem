@@ -81,11 +81,84 @@ background:#c1121f;
 transform:translateY(-2px);
 }
 
+.error-msg{
+
+position:fixed;
+
+top:30px;
+left:50%;
+
+transform:translateX(-50%);
+
+padding:15px 28px;
+
+background:
+linear-gradient(
+135deg,
+#ef4444,
+#dc2626
+);
+
+color:white;
+
+font-size:15px;
+font-weight:600;
+
+border-radius:14px;
+
+box-shadow:
+0 8px 25px rgba(0,0,0,0.35);
+
+z-index:999999;
+
+animation:fadeOut 4s forwards;
+}
+
+@keyframes fadeOut{
+
+0%{
+opacity:1;
+}
+
+80%{
+opacity:1;
+}
+
+100%{
+opacity:0;
+}
+}
+
 </style>
 
 </head>
 
 <body>
+
+<%
+
+String errorMessage =
+(String)session.getAttribute(
+        "errorMessage");
+
+if(errorMessage != null){
+
+%>
+
+<div class="error-msg">
+
+<%= errorMessage %>
+
+</div>
+
+<%
+
+session.removeAttribute(
+        "errorMessage");
+
+}
+
+%>
 
 <div class="container">
 
