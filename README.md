@@ -63,6 +63,13 @@ The system includes:
 ## Database
 
 * MySQL
+* Railway Cloud MySQL
+
+## Deployment
+
+* Docker
+* Apache Tomcat
+* Render
 
 ## Email Service
 
@@ -70,7 +77,11 @@ The system includes:
 * Gmail SMTP
 
 ---
+# Deployment Architecture
 
+JSP → Servlets → JDBC → Railway MySQL Database
+
+---
 # Database Tables
 
 ## users
@@ -232,7 +243,7 @@ This project is created for educational and learning purposes.
 
 ## LinkedIn / GitHub Post
 
-Today I completed a full-stack Employee Management System (EMS) project using Java, JSP, Servlets, JDBC, and MySQL.
+Today I completed a full-stack Employee Management System (EMS) project using Java, JSP, Servlets, JDBC, MySQL Docker, Railway and Render.
 
 The system includes:
 
@@ -245,7 +256,7 @@ The system includes:
 * Modern Glassmorphism UI
 
 Tech Stack:
-Java | JSP | Servlets | JDBC | MySQL | HTML | CSS | Jakarta EE
+Java | JSP | Servlets | JDBC | MySQL | Railway | Render | Docker | HTML | CSS | Jakarta EE
 
 This project helped me improve my understanding of:
 
@@ -255,10 +266,13 @@ This project helped me improve my understanding of:
 * MVC Architecture
 * Session Management
 * Email Integration
+* Docker Deployment
+* Cloud Hosting
 * UI Design
 
 GitHub Repository:
 https://github.com/Koushiki2114/EmployeeManagementSystem
 
 Live Demo:
-[PASTE YOUR WEBSITE LINK HERE]
+https://employeemanagementsystem-78ej.onrender.com/login.jsp
+[Note: The application is hosted on Render free tier, so initial loading may take 30–60 seconds.]
