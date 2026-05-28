@@ -73,27 +73,44 @@ public class UpdateTaskServlet extends HttpServlet {
 
             if(row > 0){
 
-                EmailUtil.sendEmail(
+                try {
 
-                    employeeEmail,
+                    EmailUtil.sendEmail(
 
-                    "Task Updated",
+                        employeeEmail,
 
-                    "Hello "
-                    + request.getParameter("employeeName")
+                        "Task Updated",
 
-                    + ",\n\nYour assigned task has been updated.\n\n"
+                        "Hello "
+                        + request.getParameter("employeeName")
 
-                    + "Task Title: "
-                    + request.getParameter("taskTitle")
+                        + ",\n\nYour assigned task has been updated.\n\n"
 
-                    + "\nDeadline: "
-                    + request.getParameter("deadline")
+                        + "Task Title: "
+                        + request.getParameter("taskTitle")
 
-                    + "\nStatus: "
-                    + request.getParameter("status")
+                        + "\nTask Description: "
+                        + request.getParameter("taskDescription")
 
-                );
+                        + "\nDeadline: "
+                        + request.getParameter("deadline")
+
+                        + "\nStatus: "
+                        + request.getParameter("status")
+
+                    );
+
+                } catch(Exception mailException){
+
+                    mailException.printStackTrace();
+                }
+
+                HttpSession session =
+                        request.getSession();
+
+                session.setAttribute(
+                        "successMessage",
+                        "Task Updated Successfully!");
 
                 response.sendRedirect(
                         "ManageTaskServlet");
