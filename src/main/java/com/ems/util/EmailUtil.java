@@ -11,36 +11,58 @@ public class EmailUtil {
                                  String subject,
                                  String message){
 
-        final String from = "emsproject2026@gmail.com";
+        final String from =
+                "emsproject2026@gmail.com";
 
-        final String password = "mgogasjhjrlxpxlg";
+        final String password =
+                "mgogasjhjrlxpxlg";
 
-        Properties props = new Properties();
+        Properties props =
+                new Properties();
 
-        props.put("mail.smtp.host","smtp.gmail.com");
-        props.put("mail.smtp.port","587");
-        props.put("mail.smtp.auth","true");
-        props.put("mail.smtp.starttls.enable","true");
+        props.put(
+                "mail.smtp.host",
+                "smtp.gmail.com");
 
-        Session session = Session.getInstance(props,
+        props.put(
+                "mail.smtp.port",
+                "587");
+
+        props.put(
+                "mail.smtp.auth",
+                "true");
+
+        props.put(
+                "mail.smtp.starttls.enable",
+                "true");
+
+        Session session =
+                Session.getInstance(
+                props,
+
                 new Authenticator(){
 
             protected PasswordAuthentication
             getPasswordAuthentication(){
 
                 return new PasswordAuthentication(
-                        from,password);
+                        from,
+                        password);
             }
         });
 
         try{
 
-            Message msg = new MimeMessage(session);
+            Message msg =
+                    new MimeMessage(session);
 
-            msg.setFrom(new InternetAddress(from));
+            msg.setFrom(
+                    new InternetAddress(from));
 
             msg.setRecipients(
+
                     Message.RecipientType.TO,
+
                     InternetAddress.parse(to)
             );
 
@@ -49,9 +71,14 @@ public class EmailUtil {
             msg.setText(message);
 
             Transport.send(msg);
-            System.out.println("EMAIL SENT SUCCESSFULLY");
+
+            System.out.println(
+                    "EMAIL SENT SUCCESSFULLY");
 
         }catch(Exception e){
+
+            System.out.println(
+                    "EMAIL FAILED");
 
             e.printStackTrace();
         }
