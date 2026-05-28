@@ -130,20 +130,27 @@ public class AddEmployeeServlet extends HttpServlet {
 
                 userPs.executeUpdate();
 
-                EmailUtil.sendEmail(
+                try {
 
-                        email,
+                    EmailUtil.sendEmail(
 
-                        "Employee Record Created",
+                            email,
 
-                        "Welcome to Employee Management System\n\n"
+                            "Employee Record Created",
 
-                        + "Username: "
-                        + request.getParameter("name")
+                            "Welcome to Employee Management System\n\n"
 
-                        + "\nPassword: "
-                        + defaultPassword
-                );
+                            + "Username: "
+                            + request.getParameter("name")
+
+                            + "\nPassword: "
+                            + defaultPassword
+                    );
+
+                } catch(Exception mailException){
+
+                    mailException.printStackTrace();
+                }
 
                 HttpSession session =
                         request.getSession();
