@@ -62,19 +62,33 @@ public class UpdateEmployeeServlet extends HttpServlet {
 
             if(row > 0){
 
-                EmailUtil.sendEmail(
+                try {
 
-                    request.getParameter("email"),
+                    EmailUtil.sendEmail(
 
-                    "Employee Details Updated",
+                        request.getParameter("email"),
 
-                    "Hello "
-                    + request.getParameter("name")
+                        "Employee Details Updated",
 
-                    + ",\n\nYour employee profile details "
-                    + "have been updated successfully."
+                        "Hello "
+                        + request.getParameter("name")
 
-                );
+                        + ",\n\nYour employee profile details "
+                        + "have been updated successfully."
+
+                    );
+
+                } catch(Exception mailException){
+
+                    mailException.printStackTrace();
+                }
+
+                HttpSession session =
+                        request.getSession();
+
+                session.setAttribute(
+                        "successMessage",
+                        "Employee Updated Successfully!");
 
                 response.sendRedirect(
                         "ViewEmployeeServlet");
