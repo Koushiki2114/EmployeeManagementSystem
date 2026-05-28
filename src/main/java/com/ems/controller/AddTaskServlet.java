@@ -75,27 +75,44 @@ public class AddTaskServlet extends HttpServlet {
 
             if(row > 0){
 
-                EmailUtil.sendEmail(
+                try {
 
-                        employeeEmail,
+                    EmailUtil.sendEmail(
 
-                        "New Task Assigned",
+                            employeeEmail,
 
-                        "Hello "
-                        + employeeName
+                            "New Task Assigned",
 
-                        + ",\n\nA new task has been assigned to you.\n\n"
+                            "Hello "
+                            + employeeName
 
-                        + "Task Title: "
-                        + request.getParameter("task_title")
+                            + ",\n\nA new task has been assigned to you.\n\n"
 
-                        + "\nDeadline: "
-                        + request.getParameter("deadline")
+                            + "Task Title: "
+                            + request.getParameter("task_title")
 
-                        + "\nStatus: "
-                        + request.getParameter("status")
+                            + "\nTask Description: "
+                            + request.getParameter("task_description")
 
-                );
+                            + "\nDeadline: "
+                            + request.getParameter("deadline")
+
+                            + "\nStatus: "
+                            + request.getParameter("status")
+
+                    );
+
+                } catch(Exception mailException){
+
+                    mailException.printStackTrace();
+                }
+
+                HttpSession session =
+                        request.getSession();
+
+                session.setAttribute(
+                        "successMessage",
+                        "Task Assigned Successfully!");
 
                 response.sendRedirect(
                         "addTask.jsp");
