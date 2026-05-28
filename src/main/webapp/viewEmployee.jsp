@@ -11,7 +11,6 @@
 <title>View Employees</title>
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -23,6 +22,7 @@ body{
 background:linear-gradient(135deg,#1e3c72,#2a5298);
 min-height:100vh;
 padding:40px;
+overflow-x:auto;
 }
 
 .top-bar{
@@ -54,6 +54,7 @@ backdrop-filter:blur(12px);
 padding:35px;
 border-radius:22px;
 box-shadow:0 10px 35px rgba(0,0,0,0.25);
+overflow-x:auto;
 }
 
 h2{
@@ -64,26 +65,64 @@ font-size:35px;
 
 table{
 width:100%;
+min-width:1400px;
 border-collapse:collapse;
-overflow:hidden;
 border-radius:15px;
+overflow:hidden;
 background:white;
 }
 
 th{
 background:#1e3c72;
 color:white;
-padding:16px;
+padding:18px;
+text-align:center;
+font-size:17px;
+white-space:nowrap;
 }
 
 td{
-padding:14px;
+padding:18px;
 text-align:center;
 border-bottom:1px solid #ddd;
+vertical-align:middle;
+line-height:1.7;
+word-break:break-word;
 }
 
 tr:hover{
 background:#f5f5f5;
+}
+
+td:nth-child(2){
+min-width:180px;
+font-weight:600;
+}
+
+td:nth-child(3){
+min-width:260px;
+}
+
+td:nth-child(4){
+min-width:120px;
+}
+
+td:nth-child(5){
+min-width:170px;
+font-weight:600;
+}
+
+td:nth-child(6){
+min-width:160px;
+}
+
+td:nth-child(7){
+min-width:320px;
+white-space:normal;
+}
+
+td:nth-child(8){
+min-width:140px;
 }
 
 .edit-btn{
@@ -95,12 +134,19 @@ background:#dc3545;
 }
 
 .action-btn{
-padding:10px 16px;
+padding:10px 18px;
 border:none;
 border-radius:8px;
 color:white;
 cursor:pointer;
 font-weight:600;
+transition:0.3s;
+white-space:nowrap;
+min-width:100px;
+}
+
+.action-btn:hover{
+transform:scale(1.05);
 }
 
 .pagination{
@@ -116,6 +162,27 @@ text-decoration:none;
 margin:5px;
 border-radius:8px;
 font-weight:600;
+transition:0.3s;
+}
+
+.pagination a:hover{
+background:#1e3c72;
+color:white;
+}
+
+@media(max-width:1200px){
+
+body{
+padding:20px;
+}
+
+.container{
+padding:20px;
+}
+
+h2{
+font-size:28px;
+}
 }
 
 </style>
