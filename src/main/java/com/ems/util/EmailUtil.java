@@ -36,6 +36,22 @@ public class EmailUtil {
                 "mail.smtp.starttls.enable",
                 "true");
 
+        props.put(
+                "mail.smtp.ssl.trust",
+                "smtp.gmail.com");
+
+        props.put(
+                "mail.smtp.connectiontimeout",
+                "10000");
+
+        props.put(
+                "mail.smtp.timeout",
+                "10000");
+
+        props.put(
+                "mail.smtp.writetimeout",
+                "10000");
+
         Session session =
                 Session.getInstance(
                 props,
