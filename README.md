@@ -201,16 +201,46 @@ The system automatically sends emails when:
 
 ---
 
-# Screens Included
+## Screenshots
 
-* Login Page
-* Admin Dashboard
-* Employee Dashboard
-* Add Employee Page
-* Manage Employee Page
-* Assign Tasks Page
-* Manage Tasks Page
-* Statistics Page
+### Login Page
+![Login](screenshots/login.png)
+
+### Invalid Login
+![Invalid Login](screenshots/invalid_login.png)
+
+### Admin Dashboard
+![Admin Dashboard](screenshots/admin_dashboard.png)
+
+### Add Employee
+![Add Employee](screenshots/add_employee.png)
+
+### Employee Records
+![Employee Records](screenshots/employee_records.png)
+
+### Edit Employee
+![Edit Employee](screenshots/edit_employee.png)
+
+### Assign Task
+![Assign Task](screenshots/assign_task.png)
+
+### Manage Tasks
+![Manage Tasks](screenshots/manage_task.png)
+
+### Employee Dashboard
+![Employee Dashboard](screenshots/employee_dashboard.png)
+
+### Employee Profile
+![Employee Profile](screenshots/employee_profile.png)
+
+### Employee Statistics
+![Employee Statistics](screenshots/employee_statistics.png)
+
+### Employee Creation Email Notification
+![Employee Creation Email](screenshots/employee_add_notification.png)
+
+### Task Assignment Email Notification
+![Task Assignment Email](screenshots/task_add_notifications.png)
 
 ---
 
