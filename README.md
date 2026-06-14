@@ -263,12 +263,6 @@ Koushiki Bose
 
 ---
 
-# License
-
-This project is created for educational and learning purposes.
-
----
-
 # GitHub Launch Post
 
 ## LinkedIn / GitHub Post
@@ -307,3 +301,9 @@ Live Demo:
 https://employeemanagementsystem-78ej.onrender.com/login.jsp
 
 [Note: The application is hosted on Render free tier, so initial loading may take 30–60 seconds.]
+
+---
+
+# License
+
+This project is created for educational and learning purposes.
